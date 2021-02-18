@@ -8,15 +8,22 @@ public class Main {
         // ---------------- Test du reader --------------------
         System.out.println("---------------- Test du reader --------------------");
         File fichier = new File("entrants\\b_little_bit_of_everything.in");
-        DataSet dataSet;
         Reader reader = new Reader(" ");
-        dataSet = reader.read(fichier);
+        DataSet dataSet = reader.read(fichier);
 
-        System.out.println(dataSet.toString());
-//        System.out.println(dataSet.getNbPizzas());
-//        System.out.println(dataSet.getNbTeam2());
-//        System.out.println(dataSet.getNbTeam3());
-//        System.out.println(dataSet.getNbTeam4());
+//        System.out.println(dataSet.toString());
+        System.out.println(dataSet.getNbPizzas());
+        System.out.println(dataSet.getNbTeam2());
+        System.out.println(dataSet.getNbTeam3());
+        System.out.println(dataSet.getNbTeam4());
+
+        // ---------------- Test de l'algo 1 --------------------
+        System.out.println("---------------- Test de l'algo 1 --------------------");
+        Algo1 algo = new Algo1();
+        List<Livraison> liste2 = algo.run(dataSet);
+
+        Writer writer2 = new Writer(liste2.size(), liste2);
+        writer2.write("submissionFileB.in");
 
 
         // ---------------- Test du writer --------------------
