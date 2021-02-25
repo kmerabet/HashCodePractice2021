@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Map;
 
 public class DataSet {
     int duration;
@@ -7,19 +8,19 @@ public class DataSet {
     int nbVoiture;
     int bonus;
 
-    List<Rue> listeRues;
+    Map<String, Rue> listeRues;
     List<Voiture> listeVoitures;
 
     public DataSet() {
     }
 
-    public DataSet(int duration, int nbIntersection, int nbRue, int nbVoiture, int bonus, List<Rue> listeRues, List<Voiture> listeVoitures) {
+    public DataSet(int duration, int nbIntersection, int nbRue, int nbVoiture, int bonus, Map<String, Rue> listeRue, List<Voiture> listeVoitures) {
         this.duration = duration;
         this.nbIntersection = nbIntersection;
         this.nbRue = nbRue;
         this.nbVoiture = nbVoiture;
         this.bonus = bonus;
-        this.listeRues = listeRues;
+        this.listeRues = listeRue;
         this.listeVoitures = listeVoitures;
     }
 
@@ -77,11 +78,11 @@ public class DataSet {
         this.nbVoiture = nbVoiture;
     }
 
-    public List<Rue> getListeRues() {
+    public Map<String, Rue> getListeRues() {
         return listeRues;
     }
 
-    public void setListeRues(List<Rue> listeRues) {
+    public void setListeRues(Map<String, Rue> listeRues) {
         this.listeRues = listeRues;
     }
 

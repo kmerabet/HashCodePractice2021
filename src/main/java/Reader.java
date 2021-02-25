@@ -2,14 +2,16 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Reader {
 
     private final String SEPARATOR;
 
-    private List<Rue> listeRue = new ArrayList<>();
+    private Map<String, Rue> listeRue = new HashMap<String, Rue>();
     private List<Voiture> listeVoitures = new ArrayList<>();
     private int duration;
     private int nbIntersection;
@@ -48,8 +50,7 @@ public class Reader {
                 int tempsParcours = Integer.parseInt(lineContent[3]);
                 Rue newRue = new Rue(nomRue, intersectEntrante, intersectSortante, tempsParcours);
 
-                listeRue.add(newRue);
-                //TreeSet<String> listeRue = new TreeSet<>(liste);
+                listeRue.put(nomRue, newRue);
             }
 
             for (int i = 0; i < nbVoiture; i++) {
@@ -57,9 +58,9 @@ public class Reader {
 
                 String[] lineContent = line.split(SEPARATOR);
                 int nbRuesAParcourir = Integer.parseInt(lineContent[0]);
-                List<String> listeRuesAParcourir = new ArrayList<>();
+                List<Rue> listeRuesAParcourir = new ArrayList<>();
                 for (int j = 1; j < nbRuesAParcourir + 1; j++) {
-                    listeRuesAParcourir.add(lineContent[j]);
+                    listeRuesAParcourir.add(listeRue.get(lineContent[j]));
                 }
                 Voiture newVoiture = new Voiture(i, listeRuesAParcourir);
 
