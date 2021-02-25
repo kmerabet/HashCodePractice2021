@@ -4,6 +4,7 @@ public class Rue {
     private int intersectionEntrant;
     private int intersectionSortant;
 	private int tempsParcours;
+	private int DureeFeuVert = 0;
 
     public Rue(String nom, int intersectionEntrant, int intersectionSortant, int tempsParcours) {
     	this.nom = nom;
@@ -11,22 +12,6 @@ public class Rue {
         this.intersectionSortant = intersectionSortant;
         this.tempsParcours = tempsParcours;
     }
-
-//    public int getNbIngredients() {
-//        return 0;
-//    }
-//
-//    public void setNbIngredients(int nbIngredients) {
-//        //this.nbIngredients = nbIngredients;
-//    }
-//
-//    public TreeSet<String> getListeIngredients() {
-//		return null;
-//    }
-//
-//    public void setListeIngredients(TreeSet<String> listeIngredients) {
-//        //this.listeIngredients = listeIngredients;
-//    }
 
     @Override
     public String toString() {
@@ -52,5 +37,13 @@ public class Rue {
 
 	public int getTempsParcours() {
 		return tempsParcours;
+	}
+
+	public int getDureeFeuVert() {
+		return DureeFeuVert;
+	}
+
+	public void setDureeFeuVert(int dureeFeuVert) {
+		DureeFeuVert = dureeFeuVert;
 	}
 }
