@@ -1,11 +1,11 @@
 import java.util.TreeSet;
 
-public class Pizza {
+public class Rue {
 
     private int nbIngredients;
     private TreeSet<String> listeIngredients;
 
-    public Pizza(int nbIngredients, TreeSet<String> listeIngredients) {
+    public Rue(int nbIngredients, TreeSet<String> listeIngredients) {
 
         this.nbIngredients = nbIngredients;
         this.listeIngredients = listeIngredients;

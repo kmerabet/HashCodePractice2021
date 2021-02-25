@@ -8,7 +8,7 @@ public class Reader {
     private final String SEPARATOR;
     private DataSet dataSet;
 
-    private List<Pizza> listePizzas = new ArrayList<>();
+    private List<Rue> listePizzas = new ArrayList<>();
     private int nbPizzas;
     private int nbTeam2;
     private int nbTeam3;
@@ -48,7 +48,7 @@ public class Reader {
                     TreeSet<String> listeIngredients = new TreeSet<>(liste);
 
                     // Création des objets Pizza et ajout à la liste
-                    Pizza newPizza = new Pizza(nbIngredients, listeIngredients);
+                    Rue newPizza = new Rue(nbIngredients, listeIngredients);
                     listePizzas.add(newPizza);
                 }
             }

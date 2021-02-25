@@ -6,12 +6,12 @@ public class DataSet {
     int nbTeam3;
     int nbTeam4;
 
-    List<Pizza> listePizzas;
+    List<Rue> listePizzas;
 
     public DataSet() {
     }
 
-    public DataSet(int nbPizzas, int nbTeam2, int nbTeam3, int nbTeam4, List<Pizza> listePizzas) {
+    public DataSet(int nbPizzas, int nbTeam2, int nbTeam3, int nbTeam4, List<Rue> listePizzas) {
         this.nbPizzas = nbPizzas;
         this.nbTeam2 = nbTeam2;
         this.nbTeam3 = nbTeam3;
@@ -35,7 +35,7 @@ public class DataSet {
         return nbTeam4;
     }
 
-    public List<Pizza> getListePizzas() {
+    public List<Rue> getListePizzas() {
         return listePizzas;
     }
 
