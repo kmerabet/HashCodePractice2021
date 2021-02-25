@@ -1,18 +1,21 @@
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Reader {
 
     private final String SEPARATOR;
-    private DataSet dataSet;
 
-    private List<Rue> listePizzas = new ArrayList<>();
-    private int nbPizzas;
-    private int nbTeam2;
-    private int nbTeam3;
-    private int nbTeam4;
+    private List<Rue> listeRue = new ArrayList<>();
+    private List<Voiture> listeVoitures = new ArrayList<>();
+    private int duration;
+    private int nbIntersection;
+    private int nbRue;
+    private int nbVoiture;
+    private int bonus;
 
     public Reader(String separateur) {
         this.SEPARATOR = separateur;
@@ -25,39 +28,49 @@ public class Reader {
             if (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] lineContent = line.split(SEPARATOR);
-                nbPizzas = Integer.parseInt(lineContent[0]);
-                nbTeam2 = Integer.parseInt(lineContent[1]);
-                nbTeam3 = Integer.parseInt(lineContent[2]);
-                nbTeam4 = Integer.parseInt(lineContent[3]);
+                duration = Integer.parseInt(lineContent[0]);
+                nbIntersection = Integer.parseInt(lineContent[1]);
+                nbRue = Integer.parseInt(lineContent[2]);
+                nbVoiture = Integer.parseInt(lineContent[3]);
+                bonus = Integer.parseInt(lineContent[4]);
 
-                //System.out.println("Nb pizzas: " + nbPizzas + "; Nb duos: " + nbTeam2 + "; Nb trios: " + nbTeam3 + "; Nb quatuors:" + nbTeam4);
+                System.out.println("duration " + duration + "; nbIntersection: " + nbIntersection + "; nbRue: " + nbRue + "; nbVoiture:" + nbVoiture + "; bonus:" + bonus);
             }
 
             // Lecture des autres lignes
-            while (scanner.hasNextLine()) {
-                for (int i = 0; i < nbPizzas; i++) {
-                    String line = scanner.nextLine();
+            for (int i = 0; i < nbRue; i++) {
+                String line = scanner.nextLine();
 
-                    //Recup du nb d'ingredients
-                    int nbIngredients = Integer.parseInt(line.substring(0, line.indexOf(" ")));
-                    //System.out.println("Nb ingrédients: " + nbIngredients + "; Liste ingredients: " + line.substring(line.indexOf(" ") + 1));
+                String[] lineContent = line.split(SEPARATOR);
+                int intersectEntrante = Integer.parseInt(lineContent[0]);
+                int intersectSortante = Integer.parseInt(lineContent[1]);
+                String nomRue = lineContent[2];
+                int tempsParcours = Integer.parseInt(lineContent[3]);
+                Rue newRue = new Rue(nomRue, intersectEntrante, intersectSortante, tempsParcours);
 
-                    //Mise en forme dans un tableau ordonné
-                    String[] lineContent = line.substring(line.indexOf(" ") + 1).split(SEPARATOR);
-                    List<String> liste = new ArrayList<>(Arrays.asList(lineContent));
-                    TreeSet<String> listeIngredients = new TreeSet<>(liste);
+                listeRue.add(newRue);
+                //TreeSet<String> listeRue = new TreeSet<>(liste);
+            }
 
-                    // Création des objets Pizza et ajout à la liste
-                    Rue newPizza = new Rue(nbIngredients, listeIngredients);
-                    listePizzas.add(newPizza);
+            for (int i = 0; i < nbVoiture; i++) {
+                String line = scanner.nextLine();
+
+                String[] lineContent = line.split(SEPARATOR);
+                int nbRuesAParcourir = Integer.parseInt(lineContent[0]);
+                List<String> listeRuesAParcourir = new ArrayList<>();
+                for (int j = 1; j < nbRuesAParcourir + 1; j++) {
+                    listeRuesAParcourir.add(lineContent[j]);
                 }
+                Voiture newVoiture = new Voiture(i, listeRuesAParcourir);
+
+                listeVoitures.add(newVoiture);
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return new DataSet(nbPizzas, nbTeam2, nbTeam3, nbTeam4, listePizzas);
+        return new DataSet(duration, nbIntersection, nbRue, nbVoiture, bonus, listeRue, listeVoitures);
     }
 
 }
