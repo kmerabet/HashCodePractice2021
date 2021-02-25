@@ -1,52 +1,65 @@
 import java.util.List;
 
 public class DataSet {
-    int nbPizzas;
-    int nbTeam2;
-    int nbTeam3;
-    int nbTeam4;
-
-    List<Rue> listePizzas;
+    int duration;
+    int nbIntersection;
+    int nbRue;
+    int nbVoiture;
+    int bonus;
 
     public DataSet() {
     }
 
-    public DataSet(int nbPizzas, int nbTeam2, int nbTeam3, int nbTeam4, List<Rue> listePizzas) {
-        this.nbPizzas = nbPizzas;
-        this.nbTeam2 = nbTeam2;
-        this.nbTeam3 = nbTeam3;
-        this.nbTeam4 = nbTeam4;
-        this.listePizzas = listePizzas;
+    public DataSet(int duration, int nbIntersection, int nbRue, int nbVoiture, int bonus) {
+        this.duration = duration;
+        this.nbIntersection = nbIntersection;
+        this.nbRue = nbRue;
+        this.nbVoiture = nbVoiture;
+        this.bonus = bonus;
     }
 
-    public int getNbPizzas() {
-        return nbPizzas;
-    }
-
-    public int getNbTeam2() {
-        return nbTeam2;
-    }
-
-    public int getNbTeam3() {
-        return nbTeam3;
-    }
-
-    public int getNbTeam4() {
-        return nbTeam4;
-    }
-
-    public List<Rue> getListePizzas() {
-        return listePizzas;
-    }
-
+   
     @Override
     public String toString() {
         return "DataSet{\n" +
-                "nbPizzas= " + nbPizzas +
-                ",\nnbTeam2= " + nbTeam2 +
-                ",\nnbTeam3= " + nbTeam3 +
-                ",\nnbTeam4= " + nbTeam4 +
-                ",\nlistePizzas= " + listePizzas.toString() +
+                "duration= " + duration +
+                ",\nbIntersection= " + nbIntersection +
+                ",\nbRue= " + nbRue +
+                ",\nbVoiture= " + nbVoiture +
+                ",\bonus= " + bonus +
                 '}';
     }
+
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
+	public int getNbIntersection() {
+		return nbIntersection;
+	}
+
+	public void setNbIntersection(int nbIntersection) {
+		this.nbIntersection = nbIntersection;
+	}
+
+	public int getNbRue() {
+		return nbRue;
+	}
+
+	public void setNbRue(int nbRue) {
+		this.nbRue = nbRue;
+	}
+
+	public int getBonus() {
+		return bonus;
+	}
+
+	public void setBonus(int bonus) {
+		this.bonus = bonus;
+	}
+
 }
