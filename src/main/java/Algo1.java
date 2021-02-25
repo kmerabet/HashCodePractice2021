@@ -10,7 +10,7 @@ public class Algo1 {
     public Algo1() {
     }
 
-    public List<Livraison> run(DataSet dataSet) {
+    public List<Schedule> run(DataSet dataSet) {
         System.out.println("Pizzas au départ: " + dataSet.getNbPizzas());
 
         // On calcule le nombre d'équipes livrables en fonction du nombre de pizzas disponibles
@@ -38,7 +38,7 @@ public class Algo1 {
         System.out.println("Nb team de 2 livrables: " + nbTeam2Livrables);
         System.out.println("Pizzas restantes: " + pizzasRestantes);
 
-        List<Livraison> livraisons = new ArrayList<>();
+        List<Schedule> livraisons = new ArrayList<>();
         int indexPizzas = 0;
 
         /*
@@ -47,21 +47,21 @@ public class Algo1 {
          */
         for (int i = 0; i < nbTeam4Livrables; i++) {
             int[] commande = new int[]{indexPizzas, indexPizzas + 1, indexPizzas + 2, indexPizzas + 3};
-            Livraison livraison = new Livraison(4, commande);
+            Schedule livraison = new Schedule(4, commande);
             livraisons.add(livraison);
             indexPizzas += 4;
         }
 
         for (int i = 0; i < nbTeam3Livrables; i++) {
             int[] commande = new int[]{indexPizzas, indexPizzas + 1, indexPizzas + 2};
-            Livraison livraison = new Livraison(3, commande);
+            Schedule livraison = new Schedule(3, commande);
             livraisons.add(livraison);
             indexPizzas += 3;
         }
 
         for (int i = 0; i < nbTeam2Livrables; i++) {
             int[] commande = new int[]{indexPizzas, indexPizzas + 1};
-            Livraison livraison = new Livraison(2, commande);
+            Schedule livraison = new Schedule(2, commande);
             livraisons.add(livraison);
             indexPizzas += 2;
         }

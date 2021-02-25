@@ -6,9 +6,9 @@ import java.util.List;
 public class Writer {
 
     private int nbLivraisons;
-    private List<Livraison> listeLivraisons;
+    private List<Schedule> listeLivraisons;
 
-    public Writer(int nbLivraisons, List<Livraison> listeLivraisons) {
+    public Writer(int nbLivraisons, List<Schedule> listeLivraisons) {
         this.nbLivraisons = nbLivraisons;
         this.listeLivraisons = listeLivraisons;
     }
@@ -20,7 +20,7 @@ public class Writer {
 
             printWriter.println(nbLivraisons);
             System.out.println("Wrote:");
-            for (Livraison livraison : listeLivraisons) {
+            for (Schedule livraison : listeLivraisons) {
                 System.out.println(livraison.toString());
                 printWriter.println(livraison.toString());
             }
