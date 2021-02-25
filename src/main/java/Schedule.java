@@ -1,34 +1,43 @@
+import java.util.List;
+
 public class Schedule {
 
-    private int nbIntersections;
-    private int nbRuesConcernees;
+    private int idIntersection;
+    private List<Rue> rues;
+    
+    private static final String SEPARATOR = "/n";
 
-    public Schedule(int nbIntersections, int nbRuesConcernees) {
-        this.nbIntersections = nbIntersections;
-        this.nbRuesConcernees = nbRuesConcernees;
+    public Schedule(int idIntersection, List<Rue> rues) {
+        this.idIntersection = idIntersection;
+        this.rues = rues;
     }
 
-    public int getNbIntersections() {
-        return nbIntersections;
+    public int getIDIntersections() {
+        return idIntersection;
     }
 
-    public int getNbRuesConcernees() {
-        return nbRuesConcernees;
-    }
+	public List<Rue> getRues() {
+		return rues;
+	}
+	
+	@Override
+	public String toString() {
+		//On formate le tableau de pizzas
+		StringBuilder formattedList = new StringBuilder();
 
-    @Override
-    public String toString() {
-        //On formate le tableau de pizzas
-        StringBuilder formattedList = new StringBuilder();
-		/*for (int listePizza : listePizzas) {
-			formattedList.append(listePizza);
+		formattedList.append(idIntersection);
+		formattedList.append(SEPARATOR);
+		formattedList.append(rues.size());
+		formattedList.append(SEPARATOR);
+		
+		for (Rue rue : rues) {
+			formattedList.append(rue.getName() + " " + rue.getDureeFeuVert());
 			formattedList.append(SEPARATOR);
 		}
-		//on retire le separateur en trop à la fin de la ligne
+		
+		//on retire le separateur en trop a la fin de la ligne
 		formattedList.deleteCharAt(formattedList.lastIndexOf(SEPARATOR));
 		
-		return tailleEquipe + SEPARATOR + formattedList.toString();*/
-
-        return null;
-    }
+		return formattedList.toString();
+	}
 }
