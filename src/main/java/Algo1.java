@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class Algo1 {
@@ -11,7 +10,7 @@ public class Algo1 {
     }
 
     public List<Livraison> run(DataSet dataSet) {
-        System.out.println("Pizzas au départ: " + dataSet.getNbPizzas());
+        /*System.out.println("Pizzas au départ: " + dataSet.getNbPizzas());
 
         // On calcule le nombre d'équipes livrables en fonction du nombre de pizzas disponibles
         int nbTeam4Livrables = dataSet.getNbPizzas() / 4;
@@ -41,11 +40,13 @@ public class Algo1 {
         List<Livraison> livraisons = new ArrayList<>();
         int indexPizzas = 0;
 
+         */
+
         /*
             On crée la liste de livraisons à écrire. On assigne les pizzas dans l'ordre, il n'y a aucune opti des ingrédients.
             On commence par assigner les pizzas aux équipes de 4, puis 3, puis 2.
          */
-        for (int i = 0; i < nbTeam4Livrables; i++) {
+        /*for (int i = 0; i < nbTeam4Livrables; i++) {
             int[] commande = new int[]{indexPizzas, indexPizzas + 1, indexPizzas + 2, indexPizzas + 3};
             Livraison livraison = new Livraison(4, commande);
             livraisons.add(livraison);
@@ -64,8 +65,8 @@ public class Algo1 {
             Livraison livraison = new Livraison(2, commande);
             livraisons.add(livraison);
             indexPizzas += 2;
-        }
+        }*/
 
-        return livraisons;
+        return null; /*livraisons;*/
     }
 }
