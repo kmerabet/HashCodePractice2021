@@ -7,7 +7,7 @@ public class Main {
 
         // ---------------- Test du reader --------------------
         System.out.println("---------------- Test du reader --------------------");
-        File fichier = new File("entrants\\b_little_bit_of_everything.in");
+        File fichier = new File("entrants\\c_many_ingredients.in");
         Reader reader = new Reader(" ");
         DataSet dataSet = reader.read(fichier);
 
@@ -23,7 +23,7 @@ public class Main {
         List<Livraison> liste2 = algo.run(dataSet);
 
         Writer writer2 = new Writer(liste2.size(), liste2);
-        writer2.write("submissionFileB.in");
+        writer2.write("submissionFileC.in");
 
 
         // ---------------- Test du writer --------------------
