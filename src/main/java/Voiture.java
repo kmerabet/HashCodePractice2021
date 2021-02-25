@@ -11,10 +11,6 @@ public class Voiture {
 		this.rues = rues;
 	}
 
-    private int id;
-    private List<String> rues;
-
-
 	public List<String> getRues() {
 		return rues;
 	}
