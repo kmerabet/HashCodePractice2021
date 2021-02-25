@@ -1,5 +1,3 @@
-import java.util.TreeSet;
-
 public class Rue {
 
     private String nom;

@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class DataSet {
     int duration;
     int nbIntersection;
