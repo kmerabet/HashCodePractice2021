@@ -5,7 +5,7 @@ public class Main {
 
         // ---------------- Test du reader --------------------
         System.out.println("---------------- Test du reader --------------------");
-        File fichier = new File("entrants\\b.txt");
+        File fichier = new File("entrants\\a.txt");
         Reader reader = new Reader(" ");
         DataSet dataSet = reader.read(fichier);
 
