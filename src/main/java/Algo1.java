@@ -21,7 +21,17 @@ public class Algo1 {
     			ruesUtilisees.add(rue);
     		}
     	}
-
+    	
+    	Set<Integer> intersectionsUtilisees = new HashSet<>();
+    	for (Rue rue : ruesUtilisees) {
+    		intersectionsUtilisees.add(rue.getIntersectionEntrant());
+    		intersectionsUtilisees.add(rue.getIntersectionSortant());
+    	}
+    	
+    	for (Integer intersection : intersectionsUtilisees) {
+    		Schedule schedule = new Schedule(intersection, rues);
+    	}
+    	
     	return schedules;
     }
 }
