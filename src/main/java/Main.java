@@ -1,4 +1,6 @@
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,11 +12,11 @@ public class Main {
         DataSet dataSet = reader.read(fichier);
 
         System.out.println(dataSet.toString());
-        /*System.out.println(dataSet.getDuration());
+        System.out.println(dataSet.getDuration());
         System.out.println(dataSet.getNbIntersection());
         System.out.println(dataSet.getNbRue());
         System.out.println(dataSet.getListeVoitures());
-        System.out.println(dataSet.getBonus());*/
+        System.out.println(dataSet.getBonus());
 
         // ---------------- Test de l'algo 1 --------------------
         /*System.out.println("---------------- Test de l'algo 1 --------------------");
@@ -26,18 +28,25 @@ public class Main {
 
 
         // ---------------- Test du writer --------------------
-        /*System.out.println("---------------- Test du writer --------------------");
-        int nbLivraisons = 3;
-        Livraison liv1 = new Livraison(2, new int[]{0, 1});
-        Livraison liv2 = new Livraison(3, new int[]{2, 3, 4});
-        Livraison liv3 = new Livraison(4, new int[]{5, 6, 7, 8});
-        List<Livraison> listeLivraisons = new ArrayList<>();
-        listeLivraisons.add(liv1);
-        listeLivraisons.add(liv2);
-        listeLivraisons.add(liv3);
-
-        Writer writer = new Writer(nbLivraisons, listeLivraisons);
-        writer.write("submissionFile.in");*/
+        System.out.println("---------------- Test du writer --------------------");
+        int A = 4;
+        Rue r1 = new Rue("rue-de-londres",2,0,1);
+        Rue r2 = new Rue("rue-d-amsterdam",0,1,1);
+        Rue r3 = new Rue("rue-d-athenes",3,1,1);
+        List<Rue> rueListe = new ArrayList();
+        rueListe.add(r1);
+        rueListe.add(r2);
+        rueListe.add(r3);
+        
+        Schedule s1 = new Schedule(1, rueListe);
+        Schedule s2 = new Schedule(2, rueListe);
+        Schedule s3 = new Schedule(3, rueListe);
+        List<Schedule> listeSchedule = new ArrayList();
+        listeSchedule.add(s1);
+        listeSchedule.add(s2);
+        listeSchedule.add(s3);
+        Writer writer = new Writer(A, listeSchedule);
+        writer.write("testFile.in");
 
     }
 }
