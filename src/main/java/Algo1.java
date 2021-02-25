@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class Algo1 {
@@ -13,7 +12,6 @@ public class Algo1 {
     	List<Schedule> schedules = new ArrayList<Schedule>();
     	
     	List<Voiture> voitures = dataSet.getListeVoitures();
-    	Map<String, Rue> rues = dataSet.getListeRues();
     	
     	Set<Rue> ruesUtilisees = new HashSet<Rue>();
     	for (Voiture voiture : voitures) {
@@ -26,10 +24,24 @@ public class Algo1 {
     	for (Rue rue : ruesUtilisees) {
     		intersectionsUtilisees.add(rue.getIntersectionEntrant());
     		intersectionsUtilisees.add(rue.getIntersectionSortant());
+    		rue.setDureeFeuVert(1);
     	}
     	
     	for (Integer intersection : intersectionsUtilisees) {
-    		Schedule schedule = new Schedule(intersection, rues);
+    		Set<Rue> rues = new HashSet<Rue>();
+    		for (Rue rue : ruesUtilisees) {
+    			// rue.getIntersectionEntrant() == intersection || 
+        		if (rue.getIntersectionSortant() == intersection) {
+        			rues.add(rue);
+        		}
+        	}
+    		
+    		List<Rue> rue3EnLISTE = new ArrayList<Rue>();
+    		for (Rue rue : rues) {
+    			rue3EnLISTE.add(rue);
+    		}
+    		Schedule schedule = new Schedule(intersection, rue3EnLISTE);
+    		schedules.add(schedule);
     	}
     	
     	return schedules;

@@ -7,7 +7,7 @@ public class Main {
 
         // ---------------- Test du reader --------------------
         System.out.println("---------------- Test du reader --------------------");
-        File fichier = new File("entrants\\a.txt");
+        File fichier = new File("entrants\\f.txt");
         Reader reader = new Reader(" ");
         DataSet dataSet = reader.read(fichier);
 
@@ -19,12 +19,12 @@ public class Main {
         System.out.println(dataSet.getBonus());
 
         // ---------------- Test de l'algo 1 --------------------
-        /*System.out.println("---------------- Test de l'algo 1 --------------------");
+        System.out.println("---------------- Test de l'algo 1 --------------------");
         Algo1 algo = new Algo1();
-        List<Livraison> liste2 = algo.run(dataSet);
+        List<Schedule> liste2 = algo.run(dataSet);
 
         Writer writer2 = new Writer(liste2.size(), liste2);
-        writer2.write("submissionFileC.in");*/
+        writer2.write("submissionFileF.txt");
 
 
         // ---------------- Test du writer --------------------
@@ -47,6 +47,7 @@ public class Main {
         listeSchedule.add(s3);
         Writer writer = new Writer(A, listeSchedule);
         writer.write("testFile.txt");
+        
 
     }
 }
