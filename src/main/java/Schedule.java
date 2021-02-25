@@ -5,7 +5,7 @@ public class Schedule {
     private int idIntersection;
     private List<Rue> rues;
     
-    private static final String SEPARATOR = "/n";
+    private static final String SEPARATOR = "\n";
 
     public Schedule(int idIntersection, List<Rue> rues) {
         this.idIntersection = idIntersection;
