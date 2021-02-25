@@ -14,7 +14,9 @@ public class Writer {
     }
 
     public void write(String fileName) {
-        try (FileWriter fileWriter = new FileWriter("sortants\\" + fileName); PrintWriter printWriter = new PrintWriter(fileWriter)) {
+        try (FileWriter fileWriter = new FileWriter("sortants\\" + fileName); 
+        		PrintWriter printWriter = new PrintWriter(fileWriter)
+        		) {
 
             printWriter.println(nbLivraisons);
             System.out.println("Wrote:");
