@@ -46,7 +46,7 @@ public class Main {
         listeSchedule.add(s2);
         listeSchedule.add(s3);
         Writer writer = new Writer(A, listeSchedule);
-        writer.write("testFile.in");
+        writer.write("testFile.txt");
 
     }
 }
