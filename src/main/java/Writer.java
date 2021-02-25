@@ -5,12 +5,12 @@ import java.util.List;
 
 public class Writer {
 
-    private int nbLivraisons;
-    private List<Schedule> listeLivraisons;
+    private int nbIntersectionsConcernees;
+    private List<Schedule> listeSChedule;
 
-    public Writer(int nbLivraisons, List<Schedule> listeLivraisons) {
-        this.nbLivraisons = nbLivraisons;
-        this.listeLivraisons = listeLivraisons;
+    public Writer(int nbIntersectionsConcernees, List<Schedule> listeSChedule) {
+        this.nbIntersectionsConcernees = nbIntersectionsConcernees;
+        this.listeSChedule = listeSChedule;
     }
 
     public void write(String fileName) {
@@ -18,9 +18,9 @@ public class Writer {
         		PrintWriter printWriter = new PrintWriter(fileWriter)
         		) {
 
-            printWriter.println(nbLivraisons);
+            printWriter.println(nbIntersectionsConcernees);
             System.out.println("Wrote:");
-            for (Schedule livraison : listeLivraisons) {
+            for (Schedule livraison : listeSChedule) {
                 System.out.println(livraison.toString());
                 printWriter.println(livraison.toString());
             }
