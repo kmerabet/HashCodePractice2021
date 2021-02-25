@@ -9,7 +9,7 @@ public class Algo1 {
     public Algo1() {
     }
 
-    public List<Livraison> run(DataSet dataSet) {
+    public List<Rue> run(DataSet dataSet) {
         /*System.out.println("Pizzas au départ: " + dataSet.getNbPizzas());
 
         // On calcule le nombre d'équipes livrables en fonction du nombre de pizzas disponibles
